@@ -2,11 +2,54 @@
 	<head>
 		<meta charset="utf-8">
 		<title>the WalliN world</title>
-		<link rel="icon" type="image/x-icon" href="https://github.com/wallacetheinnovatator/wallin/blob/main/S__18063401.jpg?raw=true">
+		<link rel="icon" type="image/x-icon" href="https://github.com/wallacetheinnovatator/wallin/blob/main/newwallin.jpg?raw=true">
 		<style>
             body{
                 overflow-x:hidden;
             }
+
+            #loading {
+  				display: block;
+  				position: fixed;
+  				top: 0;
+  				left: 0;
+  				z-index: 109;
+  				width: 100vw;
+  				height: 100vh;
+  				background-color: black;
+  				background-image: url("https://github.com/wallacetheinnovatator/wallin/blob/main/newwallin.jpg?raw=true");
+  				background-repeat: no-repeat;
+  				background-position: center;
+                background-size: 20vw;
+				}
+            .loadingtext{
+                text-align:center;
+                margin-left:auto;
+                margin-right:auto;
+                font-size:35px;
+                color:#F6F6F6;
+                margin-top:73vh;
+                margin-bottom:18px;
+                line-height:38px;
+                    }
+            .loadingtext::before{
+                content:"";
+                animation: loadingtextmove 1.2s infinite linear;
+                animation-play-state: running;
+                animation-delay: 0s;
+                }
+            @keyframes loadingtextmove{
+            
+                0%{content:"Loading.";}
+                25%{content:"Loading..";}
+                50%{content:"Loading...";}
+                75%{content:"Loading..";}
+                100%{content:"Loading.";}
+            }
+			.page    { display: none;  }
+
+
+
 			.onepage{
 				width:100vw;
 				height:80vh;
@@ -93,33 +136,39 @@
 		</style>
 	</head>
 	<body>
-		<div class="onepage" style="background-image:url('https://github.com/wallacetheinnovatator/wallin/blob/main/S__18063385.jpg?raw=true');height:100vh;">
-            <div class="pagecover" style="opacity:0.5;">The Wallin World</div>
+        <div id="loading">
+            <div class="loadingtext"></div>
         </div>
-		<div class="onepage" style="background-image:url('https://github.com/wallacetheinnovatator/wallin/blob/main/S__18063387.jpg?raw=true')">
-            <div class="pagecover">number2</div>
+        <div class="page">
+                <div class="onepage" style="background-image:url('https://github.com/wallacetheinnovatator/wallin/blob/main/S__18063385.jpg?raw=true');height:100vh;">
+                <div class="pagecover" style="opacity:0.5;">The Wallin World</div>
+            </div>
+            <div class="onepage" style="background-image:url('https://github.com/wallacetheinnovatator/wallin/blob/main/S__18063387.jpg?raw=true')">
+                <div class="pagecover">number2</div>
+            </div>
+            <div class="onepage" style="background-image:url('https://github.com/wallacetheinnovatator/wallin/blob/main/S__18063394.jpg?raw=true');background-position:bottom;">
+                <div class="pagecover">number3</div>
+            </div>
+            <div class="onepage" style="background-image:url('https://github.com/wallacetheinnovatator/wallin/blob/main/S__18063389.jpg?raw=true')">
+                <div class="pagecover">number4</div>
+            </div>
+            <div class="onepage" style="background-image:url('https://github.com/wallacetheinnovatator/wallin/blob/main/S__18063392.jpg?raw=true');background-position:center 70%;">
+                <div class="pagecover">number5</div>
+            </div>
+            <div class="callmenu" onclick="showsidebar()" id="callmenu">
+                menu
+            </div>
+            <div class="sidebar" onmouseleave="hidesidebar()" id="sidebar">
+                <div class="sidebutton">The WW</div>
+                <div class="sidebutton">2</div>
+                <div class="sidebutton">3</div>
+                <div class="sidebutton">4</div>
+                <div class="sidebutton">5</div>
+            </div>
+            
+            <footer style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/a/ab/Gentau_Pic_du_Midi_Ossau.jpg')"></footer>	
         </div>
-		<div class="onepage" style="background-image:url('https://github.com/wallacetheinnovatator/wallin/blob/main/S__18063394.jpg?raw=true');background-position:bottom;">
-            <div class="pagecover">number3</div>
-        </div>
-		<div class="onepage" style="background-image:url('https://github.com/wallacetheinnovatator/wallin/blob/main/S__18063389.jpg?raw=true')">
-            <div class="pagecover">number4</div>
-        </div>
-        <div class="onepage" style="background-image:url('https://github.com/wallacetheinnovatator/wallin/blob/main/S__18063392.jpg?raw=true');background-position:center 70%;">
-            <div class="pagecover">number5</div>
-        </div>
-        <div class="callmenu" onclick="showsidebar()" id="callmenu">
-            menu
-        </div>
-        <div class="sidebar" onmouseleave="hidesidebar()" id="sidebar">
-            <div class="sidebutton">The WW</div>
-            <div class="sidebutton">2</div>
-            <div class="sidebutton">3</div>
-            <div class="sidebutton">4</div>
-            <div class="sidebutton">5</div>
-        </div>
-        
-        <footer style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/a/ab/Gentau_Pic_du_Midi_Ossau.jpg')"></footer>	
+		
         <script>
             function showsidebar(){
                 document.getElementById("sidebar").style.left = "0vw";
@@ -129,6 +178,25 @@
                 document.getElementById("sidebar").style.left = "-20vw";
                 document.getElementById("callmenu").style.opacity = "1";
             }
+
+            function onReady(callback) {
+                var intervalId = window.setInterval(function() {
+                    if (document.getElementsByTagName('body')[0] !== undefined) {
+                        window.clearInterval(intervalId);
+                        callback.call(this);
+                    }
+                }, 1000);
+            }
+
+            function setVisible(selector, visible) {
+                document.querySelector(selector).style.display = visible ? 'block' : 'none';
+            }
+
+            onReady(function() {
+                setVisible('.page', true);
+                setVisible('#loading', false);
+            });
+
         </script>
 	</body>
 </html>
