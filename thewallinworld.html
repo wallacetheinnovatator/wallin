@@ -1,0 +1,128 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>The Wallin World</title>
+		
+		<style>
+            body{
+                overflow-x:hidden;
+            }
+			.onepage{
+				width:100vw;
+				height:80vh;
+				background-repeat: no-repeat;
+                background-position:center;
+  				background-size: 100%;
+                transition:0.4s;
+			}
+            .pagecover{
+                background-color:black;
+                opacity:0;
+                transition:0.4s;
+                color:white;
+                font-size:80px;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                width:100%;
+                height:100%;
+            }
+            .pagecover:hover{
+                opacity:0.5;
+                background-color:black;
+            }
+            footer{
+                width:100vw;
+                height:55vh;
+                background-repeat: no-repeat;
+  				background-size: 100%;
+            }
+            .sidebar{
+                position:fixed;
+                top:0vh;
+                left:-20vw;
+                width:20vw;
+                height:100vh;
+                opacity:0.7;
+                background-color:blue;
+                transition:0.3s;
+            }
+            .sidebutton{
+                width:100%;
+                height:20vh;
+                background-color:blue;
+                opacity:0.7;
+                transition:0.4s;
+                cursor:pointer;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                color:black;
+                font-size:50px;
+            }
+            .sidebutton:hover{
+                background-color:white;
+            }
+            .callmenu{
+                width:30vh;
+                height:30vh;
+                border-radius:80%;
+				background-color: yellow;
+                transition:0.4s;
+                position:fixed;
+                top:-15vh;
+                left:-15vh;
+                color:black;
+                font-size:50px;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                cursor:pointer;
+            }
+            .callmenu:hover{
+				width:50vh;
+                height:50vh;
+            }
+
+		</style>
+	</head>
+	<body>
+		<div class="onepage" style="background-image:url('https://github.com/wallacetheinnovatator/wallin/blob/main/S__18063385.jpg?raw=true');height:100vh;">
+            <div class="pagecover" style="opacity:0.5;">The Wallin World</div>
+        </div>
+		<div class="onepage" style="background-image:url('https://github.com/wallacetheinnovatator/wallin/blob/main/S__18063387.jpg?raw=true')">
+            <div class="pagecover">number2</div>
+        </div>
+		<div class="onepage" style="background-image:url('https://github.com/wallacetheinnovatator/wallin/blob/main/S__18063394.jpg?raw=true');background-position:bottom;">
+            <div class="pagecover">number3</div>
+        </div>
+		<div class="onepage" style="background-image:url('https://github.com/wallacetheinnovatator/wallin/blob/main/S__18063389.jpg?raw=true')">
+            <div class="pagecover">number4</div>
+        </div>
+        <div class="onepage" style="background-image:url('https://github.com/wallacetheinnovatator/wallin/blob/main/S__18063392.jpg?raw=true');background-position:center 70%;">
+            <div class="pagecover">number5</div>
+        </div>
+        <div class="callmenu" onclick="showsidebar()" id="callmenu">
+            menu
+        </div>
+        <div class="sidebar" onmouseleave="hidesidebar()" id="sidebar">
+            <div class="sidebutton">The WW</div>
+            <div class="sidebutton">2</div>
+            <div class="sidebutton">3</div>
+            <div class="sidebutton">4</div>
+            <div class="sidebutton">5</div>
+        </div>
+        
+        <footer style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/a/ab/Gentau_Pic_du_Midi_Ossau.jpg')"></footer>	
+        <script>
+            function showsidebar(){
+                document.getElementById("sidebar").style.left = "0vw";
+                document.getElementById("callmenu").style.opacity = "0";
+            }
+            function hidesidebar(){
+                document.getElementById("sidebar").style.left = "-20vw";
+                document.getElementById("callmenu").style.opacity = "1";
+            }
+        </script>
+	</body>
+</html>
