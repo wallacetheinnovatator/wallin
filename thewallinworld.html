@@ -1,206 +1,121 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>the WalliN world</title>
-		<link rel="icon" type="image/x-icon" href="https://github.com/wallacetheinnovatator/wallin/blob/main/newwallin.jpg?raw=true">
+		<title>雜誌</title>
+		
 		<style>
-            body{
-                overflow-x:hidden;
-            }
-
-            #loading {
-  				display: block;
-  				position: fixed;
-  				top: 0;
-  				left: 0;
-  				z-index: 109;
-  				width: 100vw;
-  				height: 100vh;
-  				background-color: black;
-  				background-image: url("https://github.com/wallacetheinnovatator/wallin/blob/main/newwallin.jpg?raw=true");
-  				background-repeat: no-repeat;
-  				background-position: center;
-                background-size: 20vw;
-				}
-            .loadingtext{
-                text-align:center;
-                margin-left:auto;
-                margin-right:auto;
-                font-size:35px;
-                color:#F6F6F6;
-                margin-top:73vh;
-                margin-bottom:18px;
-                line-height:38px;
-                    }
-            .loadingtext::before{
-                content:"";
-                animation: loadingtextmove 1.2s infinite linear;
-                animation-play-state: running;
-                animation-delay: 0s;
-                }
-            @keyframes loadingtextmove{
-            
-                0%{content:"Loading.";}
-                25%{content:"Loading..";}
-                50%{content:"Loading...";}
-                75%{content:"Loading..";}
-                100%{content:"Loading.";}
-            }
-			.page    { display: none;  }
-
-
-
-			.onepage{
-				width:100vw;
-				height:80vh;
-				background-repeat: no-repeat;
-                background-position:center;
-  				background-size: 100%;
-                transition:0.4s;
-                position:relative;
-                left:-8px;
-                top:-8px;
+			body{
+				overflow-x:hidden;
 			}
-            .pagecover{
-                background-color:black;
-                opacity:0;
-                transition:0.4s;
-                color:white;
-                font-size:80px;
-                display:flex;
-                justify-content: center;
-                align-items: center;
-                width:100%;
-                height:100%;
-            }
-            .pagecover:hover{
-                opacity:0.5;
-                background-color:black;
-            }
-            footer{
-                width:100vw;
-                height:55vh;
-                background-repeat: no-repeat;
-  				background-size: 100%;
-                  position:relative;
-                left:-8px;
-                top:-8px;
-                margin-bottom:-18px;
-            }
-            .sidebar{
-                position:fixed;
-                top:0vh;
-                left:-20vw;
-                width:20vw;
-                height:100vh;
-                opacity:0.8;
-                background-color:blue;
-                transition:0.3s;
-            }
-            .sidebutton{
-                width:100%;
-                height:20vh;
-                background-color:blue;
-                opacity:0.8;
-                transition:0.4s;
-                cursor:pointer;
-                display:flex;
-                justify-content: center;
-                align-items: center;
-                color:black;
-                font-size:50px;
-            }
-            .sidebutton:hover{
-                background-color:white;
-            }
-            .callmenu{
-                width:30vh;
-                height:30vh;
-                border-radius:80%;
-				background-color: yellow;
-                transition:0.4s;
-                position:fixed;
-                top:-15vh;
-                left:-15vh;
-                color:black;
-                font-size:50px;
-                display:flex;
-                justify-content: center;
-                align-items: center;
-                cursor:pointer;
-            }
-            .callmenu:hover{
-				width:50vh;
-                height:50vh;
-            }
-
+			.firstregion{
+				width:100vw;
+				height:90vh;
+				background-color:grey;
+				margin-left:-10px;
+				margin-top:-10px;
+				z-index:-2;
+				position:absolute;
+			}
+			.secondregion{
+				width:100vw;
+				margin-bottom:3vw;
+				background-color:green;
+				margin-left:-10px;
+				position:absolute;
+				top:89vh;
+				height:70vh;
+			}
+			.thirdregion{
+				width:100vw;
+				margin-bottom:3vw;
+				background-color:yellow;
+				margin-left:-10px;
+				position:absolute;
+				top:159vh;
+				height:70vh;
+			}
+			.fourthregion{
+				width:100vw;
+				margin-bottom:3vw;
+				background-color:salmon;
+				margin-left:-10px;
+				position:absolute;
+				top:229vh;
+				height:70vh;
+			}
+			.contact{
+				width:100vw;
+				margin-bottom:3vw;
+				background-color:teal;
+				margin-left:-10px;
+				position:absolute;
+				top:299vh;
+				height:50vh;
+			}
+			.newsflash{
+				width:130vw;
+				height:130vw;
+				border-radius:80%;
+				background-color:blue;
+				position:absolute;
+				top:-147vh;
+				left:28vw;
+				z-index:-1;
+			}
+			.wordblock{
+				background-color: transparent;
+			}
+			.searchblock{
+				width:25vw;
+				height:25vh;
+				border-radius:10px;
+				background-color:aqua;
+				border:3px solid black;
+				position:absolute;
+				top:70vh;
+				left:7vw;
+				z-index:1;
+			}
 		</style>
 	</head>
 	<body>
-        <div id="loading">
-            <div class="loadingtext"></div>
-        </div>
-        <div class="page">
-                <div class="onepage" style="background-image:url('https://github.com/wallacetheinnovatator/wallin/blob/main/S__18063385.jpg?raw=true');height:100vh;">
-                <div class="pagecover" style="opacity:0.5;">The Wallin World</div>
-            </div>
-            <div class="onepage" style="background-image:url('https://github.com/wallacetheinnovatator/wallin/blob/main/S__18063387.jpg?raw=true')">
-                <div class="pagecover">number2</div>
-            </div>
-            <div class="onepage" style="background-image:url('https://github.com/wallacetheinnovatator/wallin/blob/main/S__18063394.jpg?raw=true');background-position:bottom;">
-                <div class="pagecover">number3</div>
-            </div>
-            <div class="onepage" style="background-image:url('https://github.com/wallacetheinnovatator/wallin/blob/main/S__18063389.jpg?raw=true')">
-                <div class="pagecover">number4</div>
-            </div>
-            <div class="onepage" style="background-image:url('https://github.com/wallacetheinnovatator/wallin/blob/main/S__18063392.jpg?raw=true');background-position:center 70%;">
-                <div class="pagecover">number5</div>
-            </div>
-
-            <footer style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/a/ab/Gentau_Pic_du_Midi_Ossau.jpg')"></footer>	
-
-            <div class="callmenu" onclick="showsidebar()" id="callmenu">
-                menu
-            </div>
-
-            <div class="sidebar" onmouseleave="hidesidebar()" id="sidebar">
-                <div class="sidebutton">The WW</div>
-                <div class="sidebutton">2</div>
-                <div class="sidebutton">3</div>
-                <div class="sidebutton">4</div>
-                <div class="sidebutton">5</div>
-            </div>
-            
-        </div>
-		
-        <script>
-            function showsidebar(){
-                document.getElementById("sidebar").style.left = "0vw";
-                document.getElementById("callmenu").style.opacity = "0";
-            }
-            function hidesidebar(){
-                document.getElementById("sidebar").style.left = "-20vw";
-                document.getElementById("callmenu").style.opacity = "1";
-            }
-
-            function onReady(callback) {
-                var intervalId = window.setInterval(function() {
-                    if (document.getElementsByTagName('body')[0] !== undefined) {
-                        window.clearInterval(intervalId);
-                        callback.call(this);
-                    }
-                }, 1000);
-            }
-
-            function setVisible(selector, visible) {
-                document.querySelector(selector).style.display = visible ? 'block' : 'none';
-            }
-
-            onReady(function() {
-                setVisible('.page', true);
-                setVisible('#loading', false);
-            });
-
-        </script>
+		<div class="firstregion">
+			<div class="wordblock" style="font-size:110px;color:black;margin-top:3vh;margin-left:3vw;line-height:21vh;">成人<br>&nbsp;&nbsp;&nbsp;&nbsp;之美<br><span style="font-size:60px;line-height:12vh;">Eros</span></div>
+		</div>
+		<div class="newsflash">
+			<div class="wordblock" style="font-size:100px;color:black;margin-top:150vh;margin-left:9vw;"><b>NEWS</b></div>
+			<div class="wordblock" style="font-size:50px;color:black;margin-top:5vh;margin-left:26vw;">甚麼是大?</div>
+			<div class="wordblock" style="font-size:50px;color:black;margin-top:5vh;margin-left:45vw;">甚麼是小?</div>
+			<div class="wordblock" style="font-size:50px;color:black;margin-top:5vh;margin-left:20vw;">各國平均比例報你栽!</div>
+			<div class="wordblock" style="font-size:150px;color:black;margin-top:5vh;margin-left:35vw;">。。。</div>
+		</div>
+		<div class="searchblock">
+			<div class="wordblock" style="font-size:30px;color:black;margin-top:3%;margin-left:3%;">一鍵search讓你到達</div>
+			<div style="width:22%;height:17%;border-radius:3px;background-color:white;margin-top:5%;margin-left:9%;border:1px solid black;line-height:100%;">#~~~~</div>
+			<div style="width:22%;height:17%;border-radius:3px;background-color:white;margin-top:-9%;margin-left:49%;border:1px solid black;line-height:100%;">#~~~~</div>
+			<div style="width:22%;height:17%;border-radius:3px;background-color:white;margin-top:6%;margin-left:9%;border:1px solid black;line-height:100%;">#~~~~</div>
+		</div>
+		<div class="secondregion">
+			<div class="wordblock" style="font-size:40px;color:black;margin-top:3%;margin-left:73%;">大家都在問</div>
+			<div style="background-color:white;width:20%;height:70%;margin-top:0%;margin-left:5%;"></div>
+			<div style="background-color:white;width:30%;height:15%;margin-top:-25%;margin-left:30%;"></div>
+			<div style="background-color:white;width:50%;height:15%;margin-top:5%;margin-left:35%;"></div>
+			<div style="background-color:white;width:26%;height:15%;margin-top:5%;margin-left:40%;"></div>
+		</div>
+		<div class="thirdregion">
+			<div class="wordblock" style="font-size:40px;color:black;margin-top:3%;margin-left:3%;">好康底家 嘿嘿</div>
+			<div style="background-color:white;width:20%;height:60%;margin-top:2%;margin-left:13%;"></div>
+			<div style="background-color:white;width:20%;height:60%;margin-top:-23%;margin-left:65%;"></div>
+		</div>
+		<div class="fourthregion">
+			<div class="wordblock" style="font-size:40px;color:black;margin-top:3%;margin-left:49%;line-height:12vh;"><ol>&nbsp;&nbsp;讓Dr告訴你</ol><li>壯陽配方很多假的!!</li><li>小說裡的是真的嗎?!</li><li>妹妹弟弟圖鑑,我醬正常嗎?</li></div>
+			<div style="background-color:white;width:25%;height:70%;margin-top:-23%;margin-left:10%;"></div>
+		</div>	
+		<div class="contact">
+			<div class="wordblock" style="font-size:35px;color:black;margin-top:4%;margin-left:22%;">聯絡我們</div>
+			<div class="wordblock" style="font-size:35px;color:black;margin-top:2%;margin-left:15%;">email:_________</div>
+			<div class="wordblock" style="font-size:35px;color:black;margin-top:2%;margin-left:15%;">歡迎斗內_________</div>
+			<div style="background-color:white;width:20%;height:60%;margin-top:-13%;margin-left:60%;"></div>
+		</div>	
 	</body>
 </html>
