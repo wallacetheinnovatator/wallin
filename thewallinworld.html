@@ -7,6 +7,20 @@
 			body{
 				overflow-x:hidden;
 			}
+			#loading {
+  				display: block;
+  				position: fixed;
+  				top: 0;
+  				left: 0;
+  				z-index: 109;
+  				width: 100vw;
+  				height: 100vh;
+  				background-image: url("https://github.com/wallacetheinnovatator/wallin/blob/main/magaloading.gif?raw=true");
+  				background-repeat: no-repeat;
+  				background-position: center;
+                background-size: 30vw;
+				}
+				.page    { display: none;  }
 			.firstregion{
 				width:100vw;
 				height:90vh;
@@ -79,7 +93,11 @@
 		</style>
 	</head>
 	<body>
-		<div class="firstregion">
+		<div id="loading">
+
+		</div>
+		<div class="page">
+			<div class="firstregion">
 			<div class="wordblock" style="font-size:110px;color:black;margin-top:3vh;margin-left:3vw;line-height:21vh;font-weight:bold;">成人<br>&nbsp;&nbsp;&nbsp;&nbsp;之美<br><span style="font-size:60px;line-height:12vh;">Eros</span></div>
 		</div>
 		<div class="newsflash">
@@ -122,5 +140,26 @@
 			<div class="wordblock" style="font-size:35px;color:white;margin-top:2%;margin-left:15%;">歡迎斗內_________</div>
 			<div style="background-color:white;width:20%;height:60%;margin-top:-13%;margin-left:60%;"></div>
 		</div>	
+		</div>
+		
+		<script>
+			function onReady(callback) {
+                var intervalId = window.setInterval(function() {
+                    if (document.getElementsByTagName('body')[0] !== undefined) {
+                        window.clearInterval(intervalId);
+                        callback.call(this);
+                    }
+                }, 1000);
+            }
+
+            function setVisible(selector, visible) {
+                document.querySelector(selector).style.display = visible ? 'block' : 'none';
+            }
+
+            onReady(function() {
+                setVisible('.page', true);
+                setVisible('#loading', false);
+            });
+		</script>
 	</body>
 </html>
